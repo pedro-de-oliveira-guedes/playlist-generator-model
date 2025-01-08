@@ -31,11 +31,12 @@ def format_rules(rules: list[list]) -> dict[str, set[str]]:
 
     for rule in rules:
         for song in rule[0]:
+            song = song.lower()
             if song not in formatted_rules:
                 formatted_rules[song] = set()
 
             for recommended_song in rule[1]:
-                formatted_rules[song].add(recommended_song)
+                formatted_rules[song].add(recommended_song.lower())
 
     return formatted_rules
 
