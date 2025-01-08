@@ -5,7 +5,7 @@ import pickle
 
 def get_playlists_data() -> list[list[str]]:
     print("Reading playlists data...")
-    data = pd.read_csv('playlist-generator-model\\data\\2023_spotify_songs.csv')
+    data = pd.read_csv('/content/playlist-generator-model/data/spotify_playlists.csv')
     data = data.dropna()
     data = data.drop_duplicates()
 
@@ -42,7 +42,7 @@ def format_rules(rules: list[list]) -> dict[str, set[str]]:
 
 def save_frequent_itemsets(rules: dict[str, set[str]]):
     print("Saving playlists rules...")
-    with open('playlist-generator-model\\data\\frequent_itemsets.pkl', 'wb') as f:
+    with open('/content/playlist-generator-model/data/playlists_rules.pkl', 'wb') as f:
         pickle.dump(rules, f)
 
 
