@@ -4,7 +4,7 @@ import pandas as pd
 import pickle
 
 
-PLAYLISTS_DATASET_PATH = os.getenv("PLAYLISTS_DATASET_PATH", "/data/2023_spotify_ds1.csv")
+PLAYLISTS_DATASET_PATH = os.getenv("PLAYLISTS_DATASET_PATH", "/app/data/2023_spotify_ds1.csv")
 
 
 def get_playlists_data() -> list[list[str]]:
