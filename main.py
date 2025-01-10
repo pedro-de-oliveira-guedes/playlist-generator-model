@@ -5,6 +5,7 @@ import pickle
 
 
 PLAYLISTS_DATASET_PATH = os.getenv("PLAYLISTS_DATASET_PATH", "/app/data/2023_spotify_ds1.csv")
+MODEL_SAVE_PATH = os.getenv("MODEL_SAVE_PATH", "/app/data/playlists_rules.pkl")
 
 
 def get_playlists_data() -> list[list[str]]:
@@ -47,7 +48,7 @@ def format_rules(rules: list[list]) -> dict[str, set[str]]:
 
 def save_frequent_itemsets(rules: dict[str, set[str]]):
     print("Saving playlists rules...")
-    with open('/data/playlists_rules.pkl', 'wb') as f:
+    with open(MODEL_SAVE_PATH, 'wb') as f:
         pickle.dump(rules, f)
 
 
