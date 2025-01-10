@@ -66,3 +66,5 @@ if __name__ == '__main__':
     print("Generating playlists rules...")
 
     generate_playlists_rules()
+
+    print("Playlists rules generated successfully!")
