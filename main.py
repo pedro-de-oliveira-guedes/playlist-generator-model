@@ -1,11 +1,15 @@
 from fpgrowth_py import fpgrowth
+import os
 import pandas as pd
 import pickle
 
 
+PLAYLISTS_DATASET_PATH = os.getenv("PLAYLISTS_DATASET_PATH", "/data/2023_spotify_ds1.csv")
+
+
 def get_playlists_data() -> list[list[str]]:
     print("Reading playlists data...")
-    data = pd.read_csv('/data/spotify_playlists.csv')
+    data = pd.read_csv(PLAYLISTS_DATASET_PATH)
     data = data.dropna()
     data = data.drop_duplicates()
 
