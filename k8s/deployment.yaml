@@ -29,4 +29,4 @@ spec:
           - containerPort: 5008
           env:
             - name: PLAYLISTS_DATASET_PATH
-              value: "/app/data/2023_spotify_ds1.csv"
+              value: "/app/data/2023_spotify_ds2.csv"
