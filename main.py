@@ -1,3 +1,4 @@
+from datetime import datetime
 from fpgrowth_py import fpgrowth
 import os
 import pandas as pd
@@ -48,8 +49,14 @@ def format_rules(rules: list[list]) -> dict[str, set[str]]:
 
 def save_frequent_itemsets(rules: dict[str, set[str]]):
     print("Saving playlists rules...")
+    model = {
+        "metadata": {
+            "last_update": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        },
+        "rules": rules,
+    }
     with open(MODEL_SAVE_PATH, 'wb') as f:
-        pickle.dump(rules, f)
+        pickle.dump(model, f)
 
 
 def generate_playlists_rules():
